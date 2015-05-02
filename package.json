@@ -1,0 +1,15 @@
+{
+  "name": "dare",
+  "version": "1.0.0",
+  "description": "Web platform to pick up dares and publish videos of dares",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/emilecantin/dare"
+  },
+  "author": "E. Cantin Informatique",
+  "license": "Proprietary"
+}
