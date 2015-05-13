@@ -1,8 +1,10 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
 <header class="hero-unit" id="dare-banner" back-img="{{dare.image}}">
   <div class="container">
     <h1>{{ dare.name }}</h1>
     <p class="lead">{{ dare.info }}</p>
-    <button class="btn btn-success">Do It!</button>
+    <button class="btn btn-success">{{'DO_IT' | translate}}</button>
   </div>
 </header>
 
