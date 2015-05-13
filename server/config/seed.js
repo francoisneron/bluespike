@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Video = require('../api/video/video.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -46,4 +47,17 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+});Video.find({}).remove(function() {
+  Video.create({ type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
+      function() {
+      console.log('finished populating videos');
+    });
 });
