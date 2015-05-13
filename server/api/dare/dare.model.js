@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var DareSchema = new Schema({
+  key: String,
   name: String,
   info: String,
   image: String,

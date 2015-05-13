@@ -9,7 +9,7 @@ angular.module('dareApp')
         controller: 'DaresCtrl'
       })
       .state('dare_detail', {
-        url: '/dares/:id',
+        url: '/dares/:key',
         templateUrl: 'app/dares/dare_detail.html',
         controller: 'DareDetailCtrl'
       });

@@ -13,10 +13,10 @@ exports.index = function(req, res) {
 
 // Get a single dare
 exports.show = function(req, res) {
-  Dare.findById(req.params.id, function (err, dare) {
+  Dare.find({key: req.params.id}, function (err, dare) {
     if(err) { return handleError(res, err); }
     if(!dare) { return res.send(404); }
-    return res.json(dare);
+    return res.json(dare[0]);
   });
 };
 

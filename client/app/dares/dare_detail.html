@@ -6,6 +6,15 @@
   </div>
 </header>
 
-<div class="col-md-5">
-  <iframe ng-src="{{video.key}}" frameborder="0" allowfullscreen></iframe>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header text-center">{{'THEY_DID_IT' | translate}}</h1>
+      <div ng-repeat="video in videos" class="col-lg-6">
+        <div class="video">
+          <iframe width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

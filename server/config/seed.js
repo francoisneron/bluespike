@@ -5,32 +5,9 @@
 
 'use strict';
 
-var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 var Dare = require('../api/dare/dare.model');
 var Video = require('../api/video/video.model');
-
-Thing.find({}).remove(function() {
-  Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
-  }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
-  }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
-  },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
-  },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
-  },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
-  });
-});
 
 User.find({}).remove(function() {
   User.create({
@@ -52,30 +29,35 @@ User.find({}).remove(function() {
 
 Dare.find({}).remove(function() {
   Dare.create({
+      key: "parachute",
       "name": "Parachute",
       "info": "Sauter en parachute",
       "active": true,
       "image": "http://img0.gtsstatic.com/wallpapers/a4016ea98d5f313e4519123c5b273ded_large.jpeg",
     },
     {
+      key: "bungee",
       "name": "Bungee",
       "info": "Saut de Bungee",
       "active": true,
       "image": "http://www.orbitnepal.com/wp-content/uploads/2015/03/jumpan-bungee-jumping-154639.jpg",
     },
     {
+      key: "wake",
       "name": "Wake",
       "info": "Faire du wake",
       "active": true,
       "image": "https://d1w5usc88actyi.cloudfront.net/wp-content/uploads/2011/02/Patrick-Hall-Wakeboard-Tube-9.jpg",
     },
     {
+      key: "sail",
       "name": "Voile",
       "info": "Faire de la voile",
       "active": true,
       "image": "http://www.sasksail.com/wordpress/wp-content/uploads/Laserfun.jpg",
     },
     {
+      key: "snow",
       "name": "Snowboard",
       "info": "Faire du snowboard",
       "active": true,
@@ -86,16 +68,32 @@ Dare.find({}).remove(function() {
 });
 
 Video.find({}).remove(function() {
-  Video.create({ type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/qT1ruckcya0' },
-      function() {
+  Video.create({
+      dare: 'parachute',
+      user: 'test@test.com',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/o2xmAWS4akE'
+    }, {
+      dare: 'bungee',
+      user: 'test@test.com',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/zG22qQydPVQ'
+    }, {
+      dare: 'wake',
+      user: 'test@test.com',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/wAo8M1Duc1g'
+    }, {
+      dare: 'sail',
+      user: 'test@test.com',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/qT1ruckcya0'
+    }, {
+      dare: 'snow',
+      user: 'test@test.com',
+      type: 'youtube',
+      url: 'https://www.youtube.com/embed/Zl6xwuBJVIY'
+    }, function() {
       console.log('finished populating videos');
     });
 });

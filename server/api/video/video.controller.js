@@ -5,7 +5,11 @@ var Video = require('./video.model');
 
 // Get list of videos
 exports.index = function(req, res) {
-  Video.find(function (err, videos) {
+  var query = {};
+  if (req.query.dare) {
+    query.dare = req.query.dare;
+  }
+  Video.find(query, function (err, videos) {
     if(err) { return handleError(res, err); }
     return res.json(200, videos);
   });
