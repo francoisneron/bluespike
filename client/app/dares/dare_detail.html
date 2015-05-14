@@ -4,18 +4,16 @@
   <div class="container">
     <h1>{{ dare.name }}</h1>
     <p class="lead">{{ dare.info }}</p>
-    <button class="btn btn-success">{{'DO_IT' | translate}}</button>
+    <a ui-sref="my_dares({new_dare: dare.key})" class="btn btn-success">{{'DO_IT' | translate}}</a>
   </div>
 </header>
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header text-center">{{'THEY_DID_IT' | translate}}</h1>
-      <div ng-repeat="video in videos" class="col-lg-6">
-        <div class="video">
-          <iframe width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
-        </div>
+    <h1 class="page-header text-center">{{'THEY_DID_IT' | translate}}</h1>
+    <div ng-repeat="video in videos" class="col-lg-6">
+      <div class="video">
+        <iframe width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>

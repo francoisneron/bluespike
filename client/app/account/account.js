@@ -18,5 +18,11 @@ angular.module('dareApp')
         templateUrl: 'app/account/settings/settings.html',
         controller: 'SettingsCtrl',
         authenticate: true
+      })
+      .state('my_dares', {
+        url: '/my_dares?new_dare',
+        templateUrl: 'app/account/my_dares/my_dares.html',
+        controller: 'myDaresCtrl',
+        authenticate: true
       });
   });
