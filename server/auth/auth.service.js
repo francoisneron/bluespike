@@ -68,11 +68,7 @@ function setTokenCookie(req, res) {
   var token = signToken(req.user._id, req.user.role);
   res.cookie('token', JSON.stringify(token));
   // return the user to the request page (oAuth) or homepage
-  if (typeof req.cookies.returnUrl != 'undefined') {
-      res.redirect(req.cookies.returnUrl.replace(/"/g, "") || '/');
-  } else {
-    res.redirect('/');
-  }
+  res.redirect('/');
 }
 
 exports.isAuthenticated = isAuthenticated;

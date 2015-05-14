@@ -10,7 +10,8 @@ router
   .get('/', passport.authenticate('facebook', {
     scope: ['email', 'public_profile', 'user_friends'],
     failureRedirect: '/signup',
-    session: false
+    session: false,
+    display: 'popup'
   }))
 
   .get('/callback', passport.authenticate('facebook', {

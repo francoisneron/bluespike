@@ -25,7 +25,7 @@ angular.module('dareApp')
           password: user.password
         }).
         success(function(data) {
-          $cookieStore.put('token', data.token);
+          $cookieStore.put('token', token);
           currentUser = User.get();
           deferred.resolve(data);
           return cb();
@@ -37,6 +37,11 @@ angular.module('dareApp')
         }.bind(this));
 
         return deferred.promise;
+      },
+
+      refreshUser: function() {
+        currentUser = User.get();
+        return currentUser.$promise;
       },
 
       /**
