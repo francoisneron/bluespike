@@ -8,7 +8,7 @@ angular.module('dareApp', [
   'ui.bootstrap',
   'pascalprecht.translate',
   'facebook'
-]).config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $sceDelegateProvider, $facebookProvider) {
+]).config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $sceDelegateProvider, $facebookProvider, $translateProvider) {
     $urlRouterProvider
       .otherwise('/');
 
@@ -19,12 +19,14 @@ angular.module('dareApp', [
       'self',
       // Allow loading from our assets domain.  Notice the difference between * and **.
       'https://www.youtube.com/embed/*',
-      'https://player.vimeo.com/video/*'
+      'https://player.vimeo.com/video/*',
+      'https://www.facebook.com/video/embed?video_id=*'
     ]);
     $facebookProvider.init({
       appId: '420157531503239',
       version: 'v2.3'
     });
+    $translateProvider.useSanitizeValueStrategy('escaped');
 }).factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
   return {
     // Add authorization token to headers

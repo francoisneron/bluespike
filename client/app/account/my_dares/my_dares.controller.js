@@ -1,22 +1,16 @@
 'use strict';
 
-angular.module('dareApp').controller('myDaresCtrl', function($scope, $stateParams, Auth, Dare, Video, $facebook) {
-  if ($stateParams.new_dare) {
-    $scope.new_video = new Video({dare: $stateParams.new_dare, user: Auth.getCurrentUser().email});
-    $scope.new_dare = Dare.get({id: $scope.new_video.dare});
-  }
-  $scope.videos = Video.query({user: Auth.getCurrentUser().email});
+angular.module('dareApp').controller('myDaresCtrl', function($scope, $stateParams, Auth, Dare, Video, $facebook, $modal) {
+  $scope.dares = {};
+  $scope.videos = Video.query({user: Auth.getCurrentUser().email})
+  $scope.videos.$promise.then(function(videos) {
+    videos.forEach(function(video) {
+      $scope.dares[video.dare] = Dare.get({id: video.dare});
+    });
+  });
 
   $scope.user = Auth.getCurrentUser();
 
-  $scope.authResponse = $facebook.getAuthResponse();
-
-  $facebook.login({scope: 'user_videos'}).then(function(authResponse) {
-    $scope.authResponse = authResponse;
-    $facebook.api("/:user_id/videos".replace(":user_id", Auth.getCurrentUser().facebook.id)).then(function(videos) {
-      $scope.fbVideos = videos;
-    });
-  });
 
 
   function getEmbedUrl(pastedData) {
@@ -32,7 +26,7 @@ angular.module('dareApp').controller('myDaresCtrl', function($scope, $stateParam
         result = "https://player.vimeo.com/video/:id".replace(":id", video_id);
     }
     return result;
-  }
+  };
 
 
   $scope.save_url = function(video) {
@@ -42,5 +36,26 @@ angular.module('dareApp').controller('myDaresCtrl', function($scope, $stateParam
       delete video.unvalidated_url;
     }
     video.$save();
-  }
+  };
+
+  $scope.fromFb = function(video) {
+    var fbVideosPromise = $facebook.login({scope: 'user_videos'}).then(function(authResponse) {
+      return $facebook.api("/me/videos");
+    }).then(function(videos) {
+      var modal = $modal.open({
+        templateUrl: 'app/account/my_dares/fbVideoModal.html',
+        controller: function($scope, fbVideos) {
+          $scope.fbVideos = fbVideos;
+        },
+        resolve: {
+          fbVideos: function() {return videos.data;}
+        }
+      });
+      return modal.result
+    }).then(function(videoId) {
+      video.url = "https://www.facebook.com/video/embed?video_id=:id".replace(":id", videoId);
+      return video.$save();
+    });
+  };
 });
+
