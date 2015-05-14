@@ -12,7 +12,7 @@ exports.index = function(req, res) {
   if (req.query.user) {
     query.user = req.query.user;
   }
-  Video.find(query, function (err, videos) {
+  Video.find(query).sort({date: 'descending'}).exec(function (err, videos) {
     if(err) { return handleError(res, err); }
     return res.json(200, videos);
   });
