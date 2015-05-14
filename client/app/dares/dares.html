@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<a ng-repeat='dare in dares' ui-sref="dare_detail({key: '{{dare.key}}'})" class="col-md-4 col-sm-6 col-xs-1 dare" back-img="{{dare.image}}">
+<a ng-repeat='dare in dares' ui-sref="dare_detail({key: '{{dare.key}}'})" class="col-md-4 col-sm-6 col-xs-12 dare" back-img="{{dare.image}}">
   <h1>{{dare.name}}</h1>
 </a>
 
