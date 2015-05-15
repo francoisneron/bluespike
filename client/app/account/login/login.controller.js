@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dareApp')
-  .controller('LoginCtrl', function ($scope, $stateParams, Auth, $location, $window, $interval) {
+  .controller('LoginCtrl', function ($scope, $stateParams, Auth, $location, $window, $interval, $cookieStore) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -14,8 +14,13 @@ angular.module('dareApp')
           password: $scope.user.password
         })
         .then( function() {
-          // Logged in, redirect to home
-          $location.path('/');
+          // Logged in, redirect to previous URL or home
+          if (typeof $cookieStore.get('returnUrl') != 'undefined' && $cookieStore.get('returnUrl') != '') {
+            $location.path($cookieStore.get('returnUrl'));
+            $cookieStore.remove('returnUrl');
+          } else {
+            $location.path('/');
+          }
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

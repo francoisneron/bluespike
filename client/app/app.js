@@ -79,6 +79,10 @@ angular.module('dareApp', [
     Auth.isLoggedInAsync(function(loggedIn) {
       if (nextState.authenticate && !loggedIn) {
         // store the requested url if not logged in
+        if ($location.url() != '/login')
+        {
+          $cookieStore.put('returnUrl', $state.href(nextState.name, nextParams));
+        }
         $location.path('/login');
       }
     });
