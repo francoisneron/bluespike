@@ -26,7 +26,7 @@ angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateP
       var video = new Video({dare: dare.key, user: currentUser.email});
       return video.$save();
     }).then(function() {
-      $state.go('my_dares');
+      $state.go('my_videos');
     });
   };
 });

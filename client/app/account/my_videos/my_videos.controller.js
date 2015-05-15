@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dareApp').controller('myDaresCtrl', function($scope, $stateParams, Auth, Dare, Video, $facebook, $modal) {
+angular.module('dareApp').controller('myVideosCtrl', function($scope, $stateParams, Auth, Dare, Video, $facebook, $modal) {
   $scope.dares = {};
   $scope.videos = Video.query({user: Auth.getCurrentUser().email})
   $scope.videos.$promise.then(function(videos) {
@@ -43,7 +43,7 @@ angular.module('dareApp').controller('myDaresCtrl', function($scope, $stateParam
       return $facebook.api("/me/videos");
     }).then(function(videos) {
       var modal = $modal.open({
-        templateUrl: 'app/account/my_dares/fbVideoModal.html',
+        templateUrl: 'app/account/my_videos/fbVideoModal.html',
         controller: function($scope, fbVideos) {
           $scope.fbVideos = fbVideos;
         },
