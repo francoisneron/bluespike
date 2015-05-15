@@ -11,7 +11,7 @@ router
     scope: ['email', 'public_profile', 'user_friends'],
     failureRedirect: '/signup',
     session: false,
-    display: 'popup'
+    //display: 'popup'
   }))
 
   .get('/callback', passport.authenticate('facebook', {
