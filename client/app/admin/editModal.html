@@ -1,0 +1,8 @@
+<form>
+  <div ng-repeat="field in fields" class="form-group">
+    <label for="{{field}}">{{field}}</label>
+    <input type="text" class="form-control" id="{{field}}" ng-model="item[field]">
+  </div>
+  <button ng-click="$close(item)" type="submit" class="btn btn-primary">Submit</button>
+  <button ng-click="$dismiss()" class="btn btn-default">Cancel</button>
+</form>
