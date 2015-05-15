@@ -23,3 +23,8 @@ Running the app
 * `grunt serve`
 
 
+Deploying the app
+-----------------
+
+* `grunt build`
+* `grunt buildcontrol:heroku`
