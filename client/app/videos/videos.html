@@ -1,0 +1,26 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>{{'DARE_SITE_TITLE' | translate}}</h1>
+    <p class="lead">{{'VALUE_PROPOSITION' | translate}}</p>
+    <p><a ui-sref="dares" class="btn btn-success">{{'CALL_TO_ACTION' | translate}}</a></p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <h1 class="page-header text-center">{{'VIDEOS' | translate}}</h1>
+    <div ng-repeat="video in videos" class="col-lg-6">
+      <div class="video">
+        <iframe width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Angular Fullstack v2.0.13 | <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>

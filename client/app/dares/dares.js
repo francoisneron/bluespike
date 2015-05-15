@@ -6,11 +6,13 @@ angular.module('dareApp')
       .state('dares', {
         url: '/dares',
         templateUrl: 'app/dares/dares.html',
-        controller: 'DaresCtrl'
+        controller: 'DaresCtrl',
+        authenticate: true
       })
       .state('dare_detail', {
         url: '/dares/:key',
         templateUrl: 'app/dares/dare_detail.html',
-        controller: 'DareDetailCtrl'
+        controller: 'DareDetailCtrl',
+        authenticate: true
       });
   });
