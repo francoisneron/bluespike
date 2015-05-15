@@ -4,6 +4,7 @@
   <div class="container">
     <h1>{{ dare.name }}</h1>
     <p class="lead">{{ dare.info }}</p>
+    <a ng-click="send_dare(dare)" class="btn btn-success">{{'CHALLENGE_FRIENDS' | translate}}</a>
     <a ng-click="do_dare(dare)" class="btn btn-success">{{'DO_IT' | translate}}</a>
   </div>
 </header>
