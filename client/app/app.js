@@ -23,7 +23,7 @@ angular.module('dareApp', [
       'https://www.facebook.com/video/embed?video_id=*'
     ]);
     $facebookProvider.init({
-      appId: '420157531503239',
+      appId: FACEBOOK_ID,
       version: 'v2.3'
     });
     $translateProvider.translations('en', {

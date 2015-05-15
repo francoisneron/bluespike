@@ -11,10 +11,10 @@ angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateP
           challenge:{
             'og:url': $location.absUrl(),
             'og:title': dare.name,
-            'og:type': 'dare_dev:challenge',
+            'og:type': FACEBOOK_NAMESPACE + ':challenge',
             'og:image': dare.image,
             'og:description': dare.info,
-            'fb:app_id': 420157531503239
+            'fb:app_id': FACEBOOK_ID
           }
       })
     }, function(response){

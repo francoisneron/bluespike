@@ -29,7 +29,6 @@ module.exports = function(app) {
   app.use(cookieParser());
   app.use(passport.initialize());
   if ('production' === env) {
-    app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
     app.use(express.static(path.join(config.root, 'public')));
     app.set('appPath', config.root + '/public');
     app.use(morgan('dev'));
@@ -43,4 +42,14 @@ module.exports = function(app) {
     app.use(morgan('dev'));
     app.use(errorHandler()); // Error handler - has to be last
   }
+  app.get('/config.js', function(req, res) {
+    var clientConfig = {
+      FACEBOOK_ID: process.env.FACEBOOK_ID,
+      FACEBOOK_NAMESPACE: process.env.FACEBOOK_NAMESPACE
+    }
+    res.render('config.ejs', clientConfig, function(err, data) {
+      res.set('Content-Type', 'text/javascript');
+      res.send(data);
+    });
+  });
 };
