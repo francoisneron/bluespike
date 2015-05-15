@@ -26,6 +26,24 @@ angular.module('dareApp', [
       appId: '420157531503239',
       version: 'v2.3'
     });
+    $translateProvider.translations('en', {
+      'DARE_SITE_TITLE': 'DARE SITE TITLE',
+      'SWITCH_LANGUAGE': 'FR',
+      'OTHER_LANG_KEY': 'fr',
+    });
+    $translateProvider.translations('fr', {
+      'DARE_SITE_TITLE': 'TITRE DU SITE DARE',
+      'SWITCH_LANGUAGE': 'EN',
+      'OTHER_LANG_KEY': 'en',
+    });
+    $translateProvider.registerAvailableLanguageKeys(['en', 'fr'], {
+      'en_US': 'en',
+      'en_UK': 'en',
+      'en_CA': 'en',
+      'fr_CA': 'fr',
+      'fr_FR': 'fr'
+    });
+    $translateProvider.determinePreferredLanguage();
     $translateProvider.useSanitizeValueStrategy('escaped');
 }).factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
   return {
