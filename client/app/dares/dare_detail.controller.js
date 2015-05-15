@@ -6,7 +6,7 @@ angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateP
   $scope.send_dare = function(dare) {
     $facebook.ui({
       method: 'share_open_graph',
-      action_type: 'dare_dev:send',
+      action_type: FACEBOOK_NAMESPACE + ':send',
       action_properties: JSON.stringify({
           challenge:{
             'og:url': $location.absUrl(),
