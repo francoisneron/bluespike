@@ -1,5 +1,5 @@
 angular.module('dareApp').service('LoginService', function(Auth, $modal, $q) {
-  LoginService = {};
+  var LoginService = {};
   LoginService.ensureLoggedIn = function() {
     var deferred = $q.defer();
     if(Auth.isLoggedIn()) {
