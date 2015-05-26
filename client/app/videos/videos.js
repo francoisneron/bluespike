@@ -6,7 +6,6 @@ angular.module('dareApp')
       .state('videos', {
         url: '/videos',
         templateUrl: 'app/videos/videos.html',
-        controller: 'VideoCtrl',
-        authenticate: true
+        controller: 'VideoCtrl'
       });
   });

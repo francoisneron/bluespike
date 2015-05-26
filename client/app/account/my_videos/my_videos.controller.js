@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dareApp').controller('myVideosCtrl', function($scope, $stateParams, Auth, Dare, Video, $facebook, $modal) {
+angular.module('dareApp').controller('myVideosCtrl', function($scope, $stateParams, Auth, Dare, Video, $facebook, $modal, $http) {
   $scope.dares = {};
   $scope.videos = Video.query({user: Auth.getCurrentUser().email})
   $scope.videos.$promise.then(function(videos) {
@@ -29,17 +29,39 @@ angular.module('dareApp').controller('myVideosCtrl', function($scope, $statePara
   };
 
 
+  $scope.showTos = function() {
+    return $http.get('/api/toss').then(function(response) {
+      return response.data;
+    }).then(function(tos) {
+      var modal = $modal.open({
+        template: '<p style="white-space: pre;">{{tos[\'text_\'+language]}}</p><button ng-click="$close(item)" class="btn btn-primary">OK</button>',
+        controller: function($scope, tos) {
+          $scope.tos = tos;
+        },
+        resolve: {
+          tos: function() { return tos; }
+        }
+      });
+      return modal.result;
+    });
+  };
+
   $scope.save_url = function(video) {
-    var youtube_url = /https:\/\/www.youtube.com\/watch?v=X9Ey4ovBODM/
-    if (video.unvalidated_url) {
-      video.url = getEmbedUrl(video.unvalidated_url);
-      delete video.unvalidated_url;
-    }
-    video.$save();
+    $scope.showTos().then(function() {
+      var youtube_url = /https:\/\/www.youtube.com\/watch?v=X9Ey4ovBODM/
+      if (video.unvalidated_url) {
+        video.url = getEmbedUrl(video.unvalidated_url);
+        delete video.unvalidated_url;
+      }
+      video.$save();
+    });
   };
 
   $scope.fromFb = function(video) {
-    var fbVideosPromise = $facebook.login({scope: 'user_videos'}).then(function(authResponse) {
+    $scope.showTos().then(function() {
+      return $facebook.login({scope: 'user_videos'})
+    })
+    .then(function(authResponse) {
       return $facebook.api("/me/videos");
     }).then(function(videos) {
       var modal = $modal.open({

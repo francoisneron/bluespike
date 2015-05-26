@@ -8,6 +8,7 @@
 var User = require('../api/user/user.model');
 var Dare = require('../api/dare/dare.model');
 var Video = require('../api/video/video.model');
+var Tos = require('../api/tos/tos.model');
 
 User.find({}).remove(function() {
   User.create({
@@ -29,41 +30,21 @@ User.find({}).remove(function() {
 
 Dare.find({}).remove(function() {
   Dare.create({
-      key: "parachute",
-      "name": "Parachute",
-      "info": "Sauter en parachute",
+      key: "lemon",
+      "name_en": "Lemon",
+      "name_fr": "Citron",
+      "info_en": "Eat a lemon without grimacing",
+      "info_fr": "Manger 1 citron sans faire de grimace",
       "active": true,
       "image": "http://img0.gtsstatic.com/wallpapers/a4016ea98d5f313e4519123c5b273ded_large.jpeg",
     }, {
-      key: "bungee",
-      "name": "Bungee",
-      "info": "Saut de Bungee",
+      key: "fishing",
+      "name_en": "Fishing",
+      "name_fr": "Pêche",
+      "info_en": "Go fishing in a water fountain.",
+      "info_fr": "Pêcher dans une fontaine, ou dans un trou d’eau.",
       "active": true,
       "image": "http://www.orbitnepal.com/wp-content/uploads/2015/03/jumpan-bungee-jumping-154639.jpg",
-    }, {
-      key: "wake",
-      "name": "Wake",
-      "info": "Faire du wake",
-      "active": true,
-      "image": "https://d1w5usc88actyi.cloudfront.net/wp-content/uploads/2011/02/Patrick-Hall-Wakeboard-Tube-9.jpg",
-    }, {
-      key: "sail",
-      "name": "Voile",
-      "info": "Faire de la voile",
-      "active": true,
-      "image": "http://www.sasksail.com/wordpress/wp-content/uploads/Laserfun.jpg",
-    }, {
-      key: "snow",
-      "name": "Snowboard",
-      "info": "Faire du snowboard",
-      "active": true,
-      "image": "http://t1.uccdn.com/images/9/6/3/img_como_empezar_a_hacer_snowboard_17369_orig.jpg",
-    }, {
-      key: "surf",
-      "name": "Surf",
-      "info": "Faire du surf",
-      "active": true,
-      "image": "http://globalepix.com/wp-content/uploads/2013/10/surf.jpg",
     }, function() {
       console.log('finished populating dares');
     });
@@ -71,66 +52,35 @@ Dare.find({}).remove(function() {
 
 Video.find({}).remove(function() {
   Video.create({
-      dare: 'parachute',
+      dare: 'lemon',
       user: 'test@test.com',
       type: 'youtube',
       url: 'https://www.youtube.com/embed/o2xmAWS4akE'
     }, {
-      dare: 'parachute',
+      dare: 'lemon',
       user: 'test@test.com',
       type: 'youtube',
       url: 'https://www.youtube.com/embed/mbWuGZhYbMw'
     }, {
-      dare: 'bungee',
+      dare: 'fishing',
       user: 'test@test.com',
       type: 'youtube',
       url: 'https://www.youtube.com/embed/zG22qQydPVQ'
     }, {
-      dare: 'bungee',
+      dare: 'fishing',
       user: 'test@test.com',
       type: 'youtube',
-      url: 'https://www.youtube.com/embed/UQFMy9Tz8dY'
-    }, {
-      dare: 'wake',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/wAo8M1Duc1g'
-    }, {
-      dare: 'wake',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/Q-879RNVOdg'
-    }, {
-      dare: 'sail',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/qT1ruckcya0'
-    }, {
-      dare: 'sail',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/pvEkovJNkN4'
-    }, {
-      dare: 'snow',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/Zl6xwuBJVIY'
-    }, {
-      dare: 'snow',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/iduD5sLT4fw'
-    }, {
-      dare: 'surf',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/sKeslrZ-i6k'
-    }, {
-      dare: 'surf',
-      user: 'test@test.com',
-      type: 'youtube',
-      url: 'https://www.youtube.com/embed/bwgrDybqooo'
+      url: 'https://www.youtube.com/embed/Iue2b5ARxuo'
     }, function() {
       console.log('finished populating videos');
     });
+});
+
+Tos.find({}).remove(function() {
+  Tos.create({
+    text_en: 'These are the Terms of Use in English.',
+    text_fr: "Longueur de vidéo Maximum\nAucune consommation excessive d'alcool ne doit être dans le vidéo\nAucune consommation d'alcool par un mineur\n Pas de vidéo qui pourrait enfreindre les droits d'autrui ou autrement enfreindre la loi\n Pas de comportement violent, explicite ou incitant à la haine\n"
+  }, function() {
+    console.log('finished populating TOS');
+  });
 });

@@ -5,8 +5,10 @@ var mongoose = require('mongoose'),
 
 var DareSchema = new Schema({
   key: String,
-  name: String,
-  info: String,
+  name_en: String,
+  name_fr: String,
+  info_en: String,
+  info_fr: String,
   image: String,
   active: Boolean
 });

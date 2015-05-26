@@ -1,9 +1,9 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="dare-banner" back-img="{{dare.image}}">
+<header class="hero-unit" id="dare-detail-banner" back-img="{{dare.image}}">
   <div class="container">
-    <h1>{{ dare.name }}</h1>
-    <p class="lead">{{ dare.info }}</p>
+    <h1>{{ dare['name_'+language] }}</h1>
+    <p class="lead">{{ dare['info_'+language] }}</p>
     <a ng-click="send_dare(dare)" class="btn btn-success">{{'CHALLENGE_FRIENDS' | translate}}</a>
     <a ng-click="do_dare(dare)" class="btn btn-success">{{'DO_IT' | translate}}</a>
   </div>

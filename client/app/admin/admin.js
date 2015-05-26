@@ -22,5 +22,10 @@ angular.module('dareApp')
         url: '/videos',
         templateUrl: 'app/admin/videos/videos.html',
         controller: 'VideosAdminCtrl'
+      })
+      .state('admin.tos', {
+        url: '/tos',
+        templateUrl: 'app/admin/tos/tos.html',
+        controller: 'TosAdminCtrl'
       });
   });

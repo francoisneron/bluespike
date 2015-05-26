@@ -7,7 +7,7 @@
       <div class="video">
         <iframe ng-if="video.url" width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
         <div ng-if="!video.url" class="video-expl">
-          <h3>{{dares[video.dare].name}}</h3>
+          <h3>{{dares[video.dare]['name_'+language]}}</h3>
           <p>
             {{'This dare is not completed! Follow the steps below:' | translate}}
             <ol>

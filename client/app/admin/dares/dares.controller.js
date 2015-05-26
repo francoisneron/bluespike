@@ -18,7 +18,7 @@ angular.module('dareApp').controller('DaresAdminCtrl', function ($scope, $http, 
       templateUrl: 'app/admin/editModal.html',
       controller: function($scope) {
         $scope.item = {};
-        $scope.fields = ["key", "name", "info", "active", "image"];
+        $scope.fields = ["key", "name_en", "name_fr", "info_en", "info_fr", "active", "image"];
       }
     });
     modal.result.then(function(item) {

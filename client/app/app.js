@@ -69,10 +69,15 @@ angular.module('dareApp', [
       }
     }
   };
-}).run(function ($rootScope, $location, $state, Auth, $cookieStore, $window) {
+}).run(function ($rootScope, $location, $state, Auth, $cookieStore, $window, $translate) {
   if ($window.opener && $cookieStore.get('token')) {
     $window.token = $cookieStore.get('token');
   }
+
+  $rootScope.language = $translate.use();
+  $rootScope.$on('$translateChangeEnd', function() {
+    $rootScope.language = $translate.use();
+  });
 
   // Redirect to login if route requires auth and you're not logged in
   $rootScope.$on('$stateChangeStart', function (event, nextState, nextParams) {
@@ -88,4 +93,8 @@ angular.module('dareApp', [
     });
   });
 
+}).filter('localize', function($filter, $translate) {
+  return function(input) {
+    return input + '_' + $translate.use();
+  };
 });

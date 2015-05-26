@@ -2,8 +2,7 @@
   <li class="list-group-item" ng-repeat="item in items">
       <a ng-click="delete(item)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
       <a ng-click="edit(item)" class="edit"><span class="glyphicon glyphicon-pencil pull-right"></span></a>
-      <strong>{{item.name}}</strong><br>
-      <span class="text-muted">{{item.email}}</span>
+      <strong>{{item['name_'+language]}}</strong><br>
   </li>
 </ul>
 <button ng-click="create()">{{'CREATE' | translate}}</button>
