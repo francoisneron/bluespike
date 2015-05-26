@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateParams, $state, Dare, Video, LoginService, $facebook, $location) {
+angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateParams, $state, Dare, Video, LoginService, $facebook, $location, $translate) {
   $scope.dare = Dare.get({id: $stateParams.key});
   $scope.videos = Video.query({dare: $stateParams.key});
   $scope.send_dare = function(dare) {
@@ -10,10 +10,10 @@ angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateP
       action_properties: JSON.stringify({
           challenge:{
             'og:url': $location.absUrl(),
-            'og:title': dare.name,
+            'og:title': dare['name_'+$translate.use()],
             'og:type': FACEBOOK_NAMESPACE + ':challenge',
             'og:image': dare.image,
-            'og:description': dare.info,
+            'og:description': dare['info_'+$translate.use()],
             'fb:app_id': FACEBOOK_ID
           }
       })
