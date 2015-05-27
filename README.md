@@ -1,3 +1,9 @@
+
+Notes
+*************
+
+Accounts are reset on server restart from server/config/seed.js. Default account is test@test.com / test. Admin account is admin@admin.com / admin.
+
 DARE platform
 =============
 

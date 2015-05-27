@@ -34,7 +34,7 @@ angular.module('dareApp').controller('myVideosCtrl', function($scope, $statePara
       return response.data;
     }).then(function(tos) {
       var modal = $modal.open({
-        template: '<p style="white-space: pre;">{{tos[\'text_\'+language]}}</p><button ng-click="$close(item)" class="btn btn-primary">OK</button>',
+        template: '<p style="white-space: pre;">{{tos[\'text_\'+language]}}</p><button ng-click="$close(item)" class="btn btn-primary">{{"AGREE" | translate}}</button>',
         controller: function($scope, tos) {
           $scope.tos = tos;
         },

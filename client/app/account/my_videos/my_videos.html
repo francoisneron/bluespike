@@ -9,13 +9,13 @@
         <div ng-if="!video.url" class="video-expl">
           <h3>{{dares[video.dare]['name_'+language]}}</h3>
           <p>
-            {{'This dare is not completed! Follow the steps below:' | translate}}
+            {{'FOLLOW_STEPS_VIDEO' | translate}}
             <ol>
-              <li>{{'Film yourself doing this dare' | translate}}</li>
-              <li>{{'Share the video on your favorite platform (Youtube, Vimeo or Facebook)' | translate}}</li>
-              <li>{{'On Facebook, make sure you\'re tagged in the video' | translate}}</li>
+              <li>{{'STEP1_VIDEO' | translate}}</li>
+              <li>{{'STEP2_VIDEO' | translate}}</li>
+              <li>{{'STEP3_VIDEO' | translate}}</li>
               <li>
-                {{'Paste the video address (URL) below or choose from' | translate}}
+                {{'STEP4_VIDEO' | translate}}
                 <button class="btn btn-primary" ng-click="fromFb(video)">Facebook</button>
                 <form class="form-inline">
                   <input type="text" class="form-control" placeholder="{{'YOUTUBE_URL' | translate}}" ng-model="video.unvalidated_url" />
