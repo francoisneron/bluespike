@@ -2,7 +2,7 @@
 
 angular.module('dareApp').controller('myVideosCtrl', function($scope, $stateParams, Auth, Dare, Video, $facebook, $modal, $http) {
   $scope.dares = {};
-  $scope.videos = Video.query({user: Auth.getCurrentUser().email})
+  $scope.videos = Video.mine();
   $scope.videos.$promise.then(function(videos) {
     videos.forEach(function(video) {
       $scope.dares[video.dare] = Dare.get({id: video.dare});

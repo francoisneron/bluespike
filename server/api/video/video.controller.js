@@ -15,6 +15,13 @@ exports.index = function(req, res) {
   });
 };
 
+exports.mine = function(req, res) {
+  Video.find({user: req.user.email}).sort({date: 'descending'}).exec(function(err, videos) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, videos);
+  });
+};
+
 // Get a single video
 exports.show = function(req, res) {
   Video.findById(req.params.id, function (err, video) {
