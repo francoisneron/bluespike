@@ -40,5 +40,4 @@ Prerequisites:
 * clone the deployed app in the dist/ dir: `git clone -o heroku git@heroku.com:ancient-mesa-6465.git dist`
 
 Deploy:
-* `grunt build`
-* `grunt buildcontrol:heroku`
+* `grunt deploy`
