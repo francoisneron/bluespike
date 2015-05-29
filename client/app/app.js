@@ -163,7 +163,19 @@ angular.module('dareApp', [
       }
     }
   };
-}).run(function ($rootScope, $location, $state, Auth, $cookieStore, $window, $translate) {
+}).run(function ($rootScope, $location, $state, Auth, $cookieStore, $window, $translate, $modal) {
+
+  // Show 18+ modal
+  if(!$cookieStore.get('age_verified')) {
+    var modal = $modal.open({
+      templateUrl: 'app/age_modal.html'
+    });
+    modal.result.then(function() {
+      $cookieStore.put('age_verified', true);
+    }, function() {
+      $window.location.href = 'http://google.ca';
+    });
+  }
   if ($window.opener && $cookieStore.get('token')) {
     $window.token = $cookieStore.get('token');
   }
