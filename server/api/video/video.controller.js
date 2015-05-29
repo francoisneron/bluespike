@@ -9,10 +9,7 @@ exports.index = function(req, res) {
   if (req.query.dare) {
     query.dare = req.query.dare;
   }
-  if (req.query.user) {
-    query.user = req.query.user;
-  }
-  Video.find(query).sort({date: 'descending'}).exec(function (err, videos) {
+  Video.find(query).where({url: {'$ne':null}}).sort({date: 'descending'}).exec(function (err, videos) {
     if(err) { return handleError(res, err); }
     return res.json(200, videos);
   });
