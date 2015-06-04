@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="container" id="my_videos">
   <div class="row">
     <h1 class="page-header text-center">{{'MY_VIDEOS' | translate}}</h1>
     <div ng-repeat="video in videos" class="col-lg-6">
@@ -17,6 +17,8 @@
               <li>
                 {{'STEP4_VIDEO' | translate}}
                 <button class="btn btn-primary" ng-click="fromFb(video)">Facebook</button>
+                <br>
+                <br>
                 <form class="form-inline">
                   <input type="text" class="form-control" placeholder="{{'YOUTUBE_URL' | translate}}" ng-model="video.unvalidated_url" />
                   <button class="btn btn-primary btn-sm" ng-click="save_url(video)">{{'ADD_VIDEO' | translate}}</button>
@@ -29,3 +31,9 @@
     </div>
   </div>
 </div>
+
+<footer class="footer">
+  <div class="container">
+    <p> &copy; {{'SOME_COMPANY' | translate}} </a></p>
+  </div>
+</footer>

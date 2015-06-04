@@ -1,14 +1,20 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+
 <header class="hero-unit" id="dares-banner">
-  <div class="container">
+  <div class="container center">
     <h1>{{'CHOOSE_DARE' | translate}}</h1>
     <div class="btn-group">
-      <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         {{'CHOOSE_YOUR_DARE' | translate}} <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li ng-repeat="dare in dares"><a ui-sref="dare_detail({key: '{{dare.key}}'})">{{ dare['name_'+language] }}</a></li>
+        <li ng-repeat="dare in dares | filter: { active: 'true' }"><a ui-sref="dare_detail({key: '{{dare.key}}'})">{{ dare['name_'+language] }}</a></li>
       </ul>
     </div>
   </div>
 </header>
+<footer class="footer">
+  <div class="container">
+    <p> &copy; {{'SOME_COMPANY' | translate}} </a></p>
+  </div>
+</footer>

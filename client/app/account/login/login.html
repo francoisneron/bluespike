@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="container" id="login">
   <div class="row">
     <div class="col-sm-12">
       <h1>{{'LOGIN' | translate}}</h1>
@@ -42,7 +42,7 @@
 
         <hr>
         <div>
-          <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
+          <a class="btn btn-facebook btn-lg" href="" ng-click="loginOauth('facebook')">
             <i class="fa fa-facebook"></i> {{'CONNECT_FACEBOOK' | translate}}
           </a>
         </div>

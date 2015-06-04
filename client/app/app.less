@@ -24,10 +24,58 @@
 @import 'modal/modal.less';
 // endinjector
 
+.navbar-fixed-top {
+  padding: 25px 0;
+  -webkit-transition: padding .3s;
+  -moz-transition: padding .3s;
+  transition: padding .3s;
+  }
+
+.navbar-fixed-top .navbar-brand {
+  font-size: 2em;
+  padding: 5px 50px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+  img {
+     width:90px;
+     height:auto;
+  }
+}
+
+.navbar-fixed-top.navbar-shrink {
+  padding: 10px 0;
+}
+.navbar-fixed-top.navbar-shrink .navbar-brand {
+  font-size: 1.5em;
+}
+
+.navbar {
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+
+.navbar a:focus {
+  outline: 0;
+}
+
+.navbar .navbar-nav {
+  letter-spacing: 1px;
+}
+
+.navbar .navbar-nav li a:focus {
+  outline: 0;
+}
+
+.navbar-default,
+.navbar-inverse {
+  border: 0;
+}
 
 #banner {
     border-bottom: none;
-    margin-top: -20px;
+    margin-top: 60px;
 }
 
 #banner h1 {
@@ -38,24 +86,37 @@
 
 .hero-unit {
     position: relative;
-    padding: 30px 15px;
+    padding: 60px 15px;
     color: #F5F5F5;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+}
+
+#login {
+  position: relative;
+  padding: 100px;
+}
+
+#admin {
+  position: relative;
+  padding: 120px;
+}
+
+#my_videos {
+  padding: 100px;
 }
 
 .footer {
     text-align: center;
     padding: 30px 0;
+    color: white;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
 }
 
 .video {
   max-width: 560px;
-  height: 315px;
-  background: #eee;
+  background-color: rgba(238, 238, 238, 0.5);
   margin: auto;
 
   iframe {
@@ -63,3 +124,320 @@
   }
 }
 
+body {
+  padding: 40px;
+  overflow-x: hidden;
+  background-repeat : no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.background1 {
+  background-image : url('assets/images/High-rez/Mojo-Plateau-0515-26_hires.jpg');
+}
+
+.background2 {
+  background-image : url('assets/images/High-rez/Mojo-Plateau-0515-32_hires.jpg');
+}
+
+.background3 {
+  background-image : url('assets/images/High-rez/Mojo-Plateau-0515-45_hires.jpg');
+}
+
+.background4 {
+  background-image : url('assets/images/High-rez/Mojo-Plateau-0515-49_hires.jpg');
+}
+
+.videos p {
+  font-size: 20px;
+}
+
+p.small {
+  font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: 0;
+  color: #18bc9c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+header {
+  text-align: center;
+  color: #fff;
+}
+
+header .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+header img {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+header .intro-text .name {
+  display: block;
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+header .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+@media(min-width:768px) {
+  header .container {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
+  header .intro-text .name {
+    font-size: 4.75em;
+  }
+
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+}
+
+.btn-outline {
+  margin-top: 15px;
+  border: solid 2px #fff;
+  font-size: 20px;
+  color: #fff;
+  background: 0 0;
+  transition: all .3s ease-in-out;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active {
+  border: solid 2px #fff;
+  color: #18bc9c;
+  background: #fff;
+}
+
+.btn-social {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active {
+  outline: 0;
+}
+.scroll-top {
+  z-index: 1049;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  width: 50px;
+  height: 50px;
+}
+.scroll-top .btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 28px;
+}
+.scroll-top .btn:focus {
+  outline: 0;
+}
+
+.form-group label {
+color: white;
+font-size: 1em;
+}
+
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+.cb-slideshow:after { 
+    background: transparent url(../assets/images/pattern.png) repeat top left; 
+}
+.cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+  -webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 36s linear infinite 0s;
+    -moz-animation: imageAnimation 36s linear infinite 0s;
+    -o-animation: imageAnimation 36s linear infinite 0s;
+    -ms-animation: imageAnimation 36s linear infinite 0s;
+    animation: imageAnimation 36s linear infinite 0s; 
+}
+
+.cb-slideshow li:nth-child(1) span { 
+    background-image : url(../assets/images/Low-rez/Mojo-Plateau-0515-26_lowres.jpg);
+}
+.cb-slideshow li:nth-child(2) span { 
+    background-image : url(../assets/images/Low-rez/Mojo-Plateau-0515-32_lowres.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) span { 
+    background-image : url(../assets/images/Low-rez/Mojo-Plateau-0515-45_lowres.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) span { 
+    background-image : url(../assets/images/Low-rez/Mojo-Plateau-0515-49_lowres.jpg);
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) span { 
+    background-image: url(../assets/images/Low-rez/Mojo-Plateau-0515-32_lowres.jpg);
+    -webkit-animation-delay: 24s;
+    -moz-animation-delay: 24s;
+    -o-animation-delay: 24s;
+    -ms-animation-delay: 24s;
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) span { 
+    background-image: url(../assets/images/Low-rez/Mojo-Plateau-0515-45_lowres.jpg);
+    -webkit-animation-delay: 30s;
+    -moz-animation-delay: 30s;
+    -o-animation-delay: 30s;
+    -ms-animation-delay: 30s;
+    animation-delay: 30s; 
+}
+
+.cb-slideshow li:nth-child(2) div { 
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) div { 
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) div { 
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s; 
+}
+.cb-slideshow li:nth-child(5) div { 
+    -webkit-animation-delay: 24s;
+    -moz-animation-delay: 24s;
+    -o-animation-delay: 24s;
+    -ms-animation-delay: 24s;
+    animation-delay: 24s; 
+}
+.cb-slideshow li:nth-child(6) div { 
+    -webkit-animation-delay: 30s;
+    -moz-animation-delay: 30s;
+    -o-animation-delay: 30s;
+    -ms-animation-delay: 30s;
+    animation-delay: 30s; 
+}
+
+/* Animation for the slideshow images */
+@-webkit-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-moz-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -moz-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -moz-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-o-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -o-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -o-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-ms-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -ms-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -ms-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes imageAnimation { 
+    0% { opacity: 0;
+    animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+/* Show at least something when animations not supported */
+.no-cssanimations .cb-slideshow li span{
+  opacity: 1;
+}

@@ -1,5 +1,8 @@
-<h2>{{'YOU_MUST_BE_18' | translate}}</h2>
-<p>
-  <button class="btn btn-danger" ng-click="$dismiss()">{{'LEAVE' | translate}}</button>
-  <button class="btn btn-success" ng-click="$close()">{{'ENTER' | translate}}</button>
-</p>
+<div id="ageModal">
+	<h2 ng-style="{color: 'black'}">{{'YOU_MUST_BE_18' | translate}}</h2>
+	<br>
+	<p ng-style="{float: 'right'}">
+	  <button class="btn btn-danger btn-lg" ng-click="$dismiss()">{{'LEAVE' | translate}}</button>
+	  <button class="btn btn-success btn-lg" ng-click="$close()">{{'ENTER' | translate}}</button>
+	</p>
+</div>
