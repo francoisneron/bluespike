@@ -13,7 +13,7 @@ Prerequisites
 -------------
 
 * node.js (I recommend NVM: https://github.com/creationix/nvm)
-* mongodb
+* mongodb (http://docs.mongodb.org/manual/administration/install-on-linux/ or http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
 * grunt (`npm install -g grunt-cli`)
 * bower (`npm install -g bower`)
 
