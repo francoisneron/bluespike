@@ -1,4 +1,3 @@
-
 Notes
 *************
 
@@ -34,7 +33,7 @@ Deploying the app
 
 Prerequisites:
 
-* Install the command-line heroku tools
+* Install the command-line heroku tools (https://toolbelt.heroku.com/)
 * Make sure you're logged in: `heroku login`
 * Add your SSH keys `heroku keys:add`
 * clone the deployed app in the dist/ dir: `git clone -o heroku git@heroku.com:ancient-mesa-6465.git dist`
