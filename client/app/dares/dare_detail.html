@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="dare-detail-banner" back-img="{{dare.image}}">
+<header class="hero-unit" id="dare-detail-banner">
   <div class="container">
     <h1>{{ dare['name_'+language] }}</h1>
     <p class="lead">{{ dare['info_'+language] }}</p>
@@ -19,3 +19,5 @@
     </div>
   </div>
 </div>
+
+<div ng-include="'components/footer/footer.html'"></div>

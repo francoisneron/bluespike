@@ -4,7 +4,9 @@
   <div class="container">
     <h1>{{'DARE_SITE_TITLE' | translate}}</h1>
     <p class="lead">{{'VALUE_PROPOSITION' | translate}}</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/yctM9D8-pmo" frameborder="0" allowfullscreen></iframe>
+    <div class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yctM9D8-pmo" frameborder="0" allowfullscreen></iframe>
+    </div>
     <br></br>
     <p><a ui-sref="dares" class="btn btn-success btn-lg">{{'CALL_TO_ACTION' | translate}}</a></p>
   </div>
@@ -13,7 +15,7 @@
 <div class="container">
   <div class="row">
     <h1 class="page-header text-center">{{'VIDEOS' | translate}}</h1>
-    <div ng-repeat="video in videos" class="col-lg-6">
+    <div ng-repeat="video in videos" class="col-lg-3">
       <div class="video">
         <iframe width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
       </div>
@@ -21,8 +23,4 @@
   </div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-    <p> &copy; {{'SOME_COMPANY' | translate}} </a></p>
-  </div>
-</footer>
+<div ng-include="'components/footer/footer.html'"></div>
