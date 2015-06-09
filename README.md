@@ -1,4 +1,3 @@
-
 Notes
 *************
 
@@ -13,7 +12,7 @@ Prerequisites
 -------------
 
 * node.js (I recommend NVM: https://github.com/creationix/nvm)
-* mongodb
+* mongodb (http://docs.mongodb.org/manual/administration/install-on-linux/ or http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
 * grunt (`npm install -g grunt-cli`)
 * bower (`npm install -g bower`)
 
@@ -34,7 +33,7 @@ Deploying the app
 
 Prerequisites:
 
-* Install the command-line heroku tools
+* Install the command-line heroku tools (https://toolbelt.heroku.com/)
 * Make sure you're logged in: `heroku login`
 * Add your SSH keys `heroku keys:add`
 * clone the deployed app in the dist/ dir: `git clone -o heroku git@heroku.com:ancient-mesa-6465.git dist`
