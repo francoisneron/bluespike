@@ -15,6 +15,7 @@ Prerequisites
 * mongodb (http://docs.mongodb.org/manual/administration/install-on-linux/ or http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
 * grunt (`npm install -g grunt-cli`)
 * bower (`npm install -g bower`)
+* git (https://ekkescorner.wordpress.com/blog-series/git-mercurial/step-by-step-install-git-on-osx-ubuntu-and-windows/)
 
 Installing dependencies
 -----------------------
