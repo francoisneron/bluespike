@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 var VideoSchema = new Schema({
   dare: String,
   user: String,
+  name: String,
   type: String,
   url: String,
   date: { type: Date, default: Date.now }

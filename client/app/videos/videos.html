@@ -2,8 +2,10 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>{{'DARE_SITE_TITLE' | translate}}</h1>
-    <p class="lead">{{'VALUE_PROPOSITION' | translate}}</p>
+    <div style="padding-top:40px">
+      <img style="max-width:70%;" src="../assets/images/DefiMojoShotLogo.png"></img>
+      <img style="max-width:40%;" src="../assets/images/TesPasGameLogo.png"></img>
+    </div>
     <div class="video">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/yctM9D8-pmo" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -16,6 +18,7 @@
   <div class="row">
     <h1 class="page-header text-center">{{'VIDEOS' | translate}}</h1>
     <div ng-repeat="video in videos" class="col-lg-3">
+      <p class="lead" style="color: white;">{{'MADE_BY' | translate}} {{video.name}}</p>
       <div class="video">
         <iframe width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
       </div>

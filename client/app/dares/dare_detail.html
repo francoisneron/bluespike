@@ -13,6 +13,7 @@
   <div class="row">
     <h1 class="page-header text-center">{{'THEY_DID_IT' | translate}}</h1>
     <div ng-repeat="video in videos" class="col-lg-6">
+      <p class="lead" style="color: white;">{{'MADE_BY' | translate}} {{video.name}}</p>
       <div class="video">
         <iframe height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
       </div>

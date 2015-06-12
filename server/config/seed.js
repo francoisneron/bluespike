@@ -54,21 +54,25 @@ Video.find({}).remove(function() {
   Video.create({
       dare: 'lemon',
       user: 'test@test.com',
+      name: 'test',
       type: 'youtube',
       url: 'https://www.youtube.com/embed/o2xmAWS4akE'
     }, {
       dare: 'lemon',
       user: 'test@test.com',
+      name: 'test',
       type: 'youtube',
       url: 'https://www.youtube.com/embed/mbWuGZhYbMw'
     }, {
       dare: 'fishing',
       user: 'test@test.com',
+      name: 'test',
       type: 'youtube',
       url: 'https://www.youtube.com/embed/zG22qQydPVQ'
     }, {
       dare: 'fishing',
       user: 'test@test.com',
+      name: 'test',
       type: 'youtube',
       url: 'https://www.youtube.com/embed/Iue2b5ARxuo'
     }, function() {

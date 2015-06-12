@@ -23,7 +23,7 @@ angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateP
   };
   $scope.do_dare = function(dare) {
     LoginService.ensureLoggedIn().then(function(currentUser) {
-      var video = new Video({dare: dare.key, user: currentUser.email});
+      var video = new Video({dare: dare.key, user: currentUser.email, name: currentUser.name});
       return video.$save();
     }).then(function() {
       $state.go('my_videos');
