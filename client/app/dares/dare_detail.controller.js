@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateParams, $state, Dare, Video, LoginService, $facebook, $location, $translate) {
+angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateParams, $filter, $state, Dare, Video, LoginService, $facebook, $location, $translate) {
   $scope.dare = Dare.get({id: $stateParams.key});
+  $scope.myvideos = Video.mine();
   $scope.videos = Video.query({dare: $stateParams.key});
   $scope.send_dare = function(dare) {
     $facebook.ui({
@@ -21,10 +22,14 @@ angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateP
       // nothing to do here, mobe along
     });
   };
+  
   $scope.do_dare = function(dare) {
     LoginService.ensureLoggedIn().then(function(currentUser) {
-      var video = new Video({dare: dare.key, user: currentUser.email, name: currentUser.name});
-      return video.$save();
+      var found = $filter('filter')($scope.myvideos, {dare: dare.key, user: currentUser.email, name: currentUser.name}, true);
+      if(found.length == 0) {
+        var video = new Video({dare: dare.key, user: currentUser.email, name: currentUser.name});
+        return video.$save();
+      }
     }).then(function() {
       $state.go('my_videos');
     });

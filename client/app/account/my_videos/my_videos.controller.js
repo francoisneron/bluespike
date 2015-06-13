@@ -11,8 +11,6 @@ angular.module('dareApp').controller('myVideosCtrl', function($scope, $statePara
 
   $scope.user = Auth.getCurrentUser();
 
-
-
   function getEmbedUrl(pastedData) {
     var result;
     var video_id = "";
@@ -28,6 +26,14 @@ angular.module('dareApp').controller('myVideosCtrl', function($scope, $statePara
     return result;
   };
 
+  $scope.delete = function(video) {
+    Video.remove({ id: video._id });
+    angular.forEach($scope.videos, function(u, i) {
+      if (u === video) {
+        $scope.videos.splice(i, 1);
+      }
+    });
+  };
 
   $scope.showTos = function() {
     return $http.get('/api/toss').then(function(response) {

@@ -1,8 +1,9 @@
-<div id="login">
-  <div class="row">
-    <div class="col-sm-12">
-		<p> {{tos['text_'+language]}} </p>
-		<button ng-click="$close(item)" class="btn btn-primary">{{"AGREE" | translate}}</button>
-	</div>
-  </div>
+<div class="modal-header">
+    <h3 class="modal-title" style="color:black;">{{"TERM_OF_USE" | translate}}</h3>
+</div>
+<div class="modal-body">
+	<p> {{tos['text_'+language]}} </p>
+</div>
+<div class="modal-footer">
+	<button ng-click="$close(item)" class="btn btn-primary btn-lg">{{"AGREE" | translate}}</button>
 </div>

@@ -1,15 +1,11 @@
-angular.module('dareApp').service('LoginService', function(Auth, $modal, $q) {
+angular.module('dareApp').service('LoginService', function(Auth, $modal, $q, $state) {
   var LoginService = {};
   LoginService.ensureLoggedIn = function() {
     var deferred = $q.defer();
     if(Auth.isLoggedIn()) {
       deferred.resolve(Auth.getCurrentUser());
     } else {
-      var modal = $modal.open({
-        templateUrl: 'app/account/login/loginModal.html',
-        controller: 'LoginCtrl'
-      });
-      modal.result.then(deferred.resolve, deferred.reject);
+      $state.go('login');
     }
     return deferred.promise;
   };

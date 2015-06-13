@@ -1,8 +1,10 @@
-<div id="ageModal">
-	<h2 ng-style="{color: 'black'}">{{'YOU_MUST_BE_18' | translate}}</h2>
-	<br>
-	<p ng-style="{float: 'right'}">
-	  <button class="btn btn-danger btn-lg" ng-click="$dismiss()">{{'LEAVE' | translate}}</button>
-	  <button class="btn btn-success btn-lg" ng-click="$close()">{{'ENTER' | translate}}</button>
-	</p>
+<div class="modal-header">
+    <h3 class="modal-title" style="color:black;">{{"AGE_VERIFICATION" | translate}}</h3>
+</div>
+<div class="modal-body">
+	<p> {{'YOU_MUST_BE_18' | translate}}</p>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-danger btn-lg" ng-click="$dismiss()">{{'LEAVE' | translate}}</button>
+	<button class="btn btn-success btn-lg" ng-click="$close()">{{'ENTER' | translate}}</button>
 </div>

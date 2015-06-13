@@ -1,5 +1,11 @@
-<div ng-repeat="video in fbVideos" ng-click="$close(video.id)">
-  <img ng-src="{{video.picture}}" />
+<div class="modal-header">
+    <h3 class="modal-title" style="color:black;">{{"VIDEOS" | translate}}</h3>
 </div>
-<br />
-<button class="btn btn-default" ng-click="$dismiss()">{{'CLOSE' | translate}}</button>
+<div class="modal-body">
+	<div ng-repeat="video in fbVideos" ng-click="$close(video.id)">
+  		<img ng-src="{{video.picture}}" />
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary btn-lg" ng-click="$dismiss()">{{'CLOSE' | translate}}</button>
+</div>
