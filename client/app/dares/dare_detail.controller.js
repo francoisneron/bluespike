@@ -2,7 +2,7 @@
 
 angular.module('dareApp').controller('DareDetailCtrl', function ($scope, $stateParams, $filter, $state, Dare, Video, LoginService, $facebook, $location, $translate) {
   $scope.dare = Dare.get({id: $stateParams.key});
-  $scope.myvideos = Video.mine();
+  $scope.myvideos = Video.incomplete();
   $scope.videos = Video.query({dare: $stateParams.key});
   $scope.send_dare = function(dare) {
     $facebook.ui({

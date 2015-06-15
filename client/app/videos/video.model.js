@@ -5,6 +5,10 @@ angular.module('dareApp').service('Video', function($resource) {
     mine: {
       isArray: true,
       url: '/api/videos/mine'
+    },
+    incomplete: {
+      isArray: true,
+      url: '/api/videos/incomplete'
     }
   });
 });

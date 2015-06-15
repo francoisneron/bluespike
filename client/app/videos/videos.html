@@ -7,7 +7,7 @@
       <img style="max-width:40%;" src="../assets/images/TesPasGameLogo.png"></img>
     </div>
     <div class="video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/yctM9D8-pmo" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Xn96bakmc_M" frameborder="0" allowfullscreen></iframe>
     </div>
     <br></br>
     <p><a ui-sref="dares" class="btn btn-success btn-lg">{{'CALL_TO_ACTION' | translate}}</a></p>
@@ -18,7 +18,7 @@
   <div class="row">
     <h1 class="page-header text-center">{{'VIDEOS' | translate}}</h1>
     <div ng-repeat="video in videos" class="col-lg-3">
-      <p class="lead" style="color: white;">{{'MADE_BY' | translate}} {{video.name}}</p>
+      <p class="lead" style="color: white;">{{'MADE_BY' | translate}} {{video.name}} </p>
       <div class="video">
         <iframe width="560" height="315" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
       </div>

@@ -15,6 +15,14 @@ exports.index = function(req, res) {
   });
 };
 
+// Get list of empty videos
+exports.incomplete = function(req, res) {
+  Video.find({url: null}).sort({date: 'descending'}).exec(function(err, videos) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, videos);
+  });
+};
+
 exports.mine = function(req, res) {
   Video.find({user: req.user.email}).sort({date: 'descending'}).exec(function(err, videos) {
     if(err) { return handleError(res, err); }
