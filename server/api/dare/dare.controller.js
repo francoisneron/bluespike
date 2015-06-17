@@ -5,7 +5,7 @@ var Dare = require('./dare.model');
 
 // Get list of dares
 exports.index = function(req, res) {
-  Dare.find(function (err, dares) {
+  Dare.find().sort({date: 'descending'}).exec(function (err, dares) {
     if(err) { return handleError(res, err); }
     return res.json(200, dares);
   });

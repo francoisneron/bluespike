@@ -9,8 +9,9 @@ var DareSchema = new Schema({
   name_fr: String,
   info_en: String,
   info_fr: String,
-  image: String,
-  active: Boolean
+  image: { type: String, default: "http://www.defimojoshot.com/assets/images/bdf0d066.Mojo-Shot.png" },
+  active: Boolean,
+  date: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Dare', DareSchema);
